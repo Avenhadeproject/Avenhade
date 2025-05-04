@@ -1,82 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avenhade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      scroll-behavior: smooth;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      background: url('https://images.pexels.com/photos/30665591/pexels-photo-30665591/free-photo-of-voyage-en-train-de-nuit-a-teheran.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
-      background-size: cover;
+      box-sizing: border-box;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    body {
+      font-family: 'Orbitron', sans-serif; /* Orbitron pour le texte général */
+      background: radial-gradient(circle at center, #0b0f2e, #050617);
+      color: #e0e4ff;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      text-align: center;
-      margin-bottom: 40px;
+      font-family: 'Open Sans', sans-serif; /* Open Sans uniquement pour les textes de type <p> */
     }
 
-    .buttons {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 60px;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 12px 24px;
-      border-radius: 8px;
-      color: white;
-      border: 1px solid white;
-      transition: background 0.3s;
-    }
-
-    .buttons a:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    .listen-section {
-      margin-top: 80px;
-      font-size: 1.5rem;
-      background-color: rgba(0, 0, 0, 0.4);
+    header {
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px 40px;
-      border-radius: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2233;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #82aaff;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .section {
+      padding: 100px 40px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #82aaff;
+    }
+
+    .icon-links a {
+      display: inline-block;
+      margin: 0 10px;
+      transition: transform 0.3s;
+    }
+
+    .icon-links a:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    /* Smooth fade animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Avenhade</h1>
-    <p>This website is under construction.</p>
+  <header>
+    <nav>
+      <div><strong>Avenhade</strong></div>
+      <div>
+        <a href="#pitch">Projet</a>
+        <a href="#bio">À propos</a>
+        <a href="#recrutement">Recrutement</a>
+        <a href="#ecoute">Écoute</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="buttons">
-      <a href="#">About</a>
-      <a href="#">Lore</a>
-      <a href="#">Gallery</a>
-    </div>
+  <section class="section fade-in" id="pitch">
+    <h2 class="title">Le projet Avenhade</h2>
+    <p>
+       TEST
+    </p>
+  </section>
 
-    <div class="listen-section">
-      <strong>Test</strong> Test
-    </div>
+  <section class="section fade-in" id="bio">
+    <h2 class="title">Mon Histoire</h2>
+    <p>
+     TEST
+    </p>
+  </section>
+
+  <section class="section fade-in" id="recrutement">
+    <h2 class="title">Recrutement</h2>
+    <p>
+       TEST TEST TEST
+    </p>
+    <p><a href="https://forms.gle/example" style="color:#82aaff">→ Formulaire de recrutement</a></p>
+  </section>
+
+  <section class="section fade-in" id="ecoute">
+  <h2 class="title">Écoute la maquette</h2>
+  <p>
+    Liens + lecteur intégré
+  </p>
+  
+  <!-- Intégration du lecteur SoundCloud -->
+  <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/ID_DE_TA_MAQUETTE&color=%2382aaff&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+  </iframe>
+  
+  <div class="icon-links">
+    <a href="https://soundcloud.com/avenhade" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/82aaff/soundcloud.png" alt="SoundCloud" />
+    </a>
+    <a href="https://youtube.com/avenhade" target="_blank">
+      <img src="https://img.icons8.com/ios-filled/50/82aaff/youtube-play.png" alt="YouTube" />
+    </a>
   </div>
+</section>
+
+
+  <footer>
+    &copy; 2025 Avenhade. Tous droits réservés.
+  </footer>
+
+  <script>
+    // Animation au scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 </body>
 </html>
 
