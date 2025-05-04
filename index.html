@@ -56,12 +56,25 @@
       height: 30px;
       width: 30px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .menu-toggle div {
       height: 5px;
       background-color: #fff;
       border-radius: 5px;
+    }
+
+    .menu-toggle.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     nav {
@@ -170,6 +183,7 @@
         right: 0;
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 101;
+        transition: transform 0.3s ease-in-out;
       }
 
       nav a {
@@ -195,6 +209,10 @@
 
       .menu-toggle.active + nav {
         display: flex;
+      }
+
+      nav.active {
+        transform: translateX(0);
       }
     }
 
@@ -248,10 +266,8 @@
   <section class="section fade-in" id="pitch">
     <h2 class="title">Le projet Avenhade</h2>
     <p>Présentation du projet et de l'univers musical...</p>
-
     <!-- Section Image -->
     <div class="project-image">
-      <!-- Insérer l'URL de l'image ici -->
       <img src="https://cdn.discordapp.com/attachments/1167197664857837699/1368492323402547312/avenhade_v2.png?ex=68186b4b&is=681719cb&hm=a6655765cec53f7d28442f6cf0dfceafde41399ac69cffa9db89fff9361f09d6&" alt="Image du projet Avenhade">
     </div>
   </section>
@@ -270,7 +286,6 @@
   <section class="section fade-in" id="ecoute">
     <h2 class="title">Écoute la maquette</h2>
     <p>Intégration et liens</p>
-
     <!-- Intégration du lecteur SoundCloud -->
     <iframe width="100%" height="166" scrolling="no" frameborder="no" 
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/ID_DE_TA_MAQUETTE&color=%2382aaff&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
@@ -295,7 +310,26 @@
     document.getElementById('menu-toggle').addEventListener('click', function() {
       this.classList.toggle('active');
       const nav = document.getElementById('nav-links');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      nav.classList.toggle('active');
+    });
+
+    // Close the menu when clicking outside
+    window.addEventListener('click', function(event) {
+      const nav = document.getElementById('nav-links');
+      const menuToggle = document.getElementById('menu-toggle');
+      if (!menuToggle.contains(event.target) && !nav.contains(event.target)) {
+        menuToggle.classList.remove('active');
+        nav.classList.remove('active');
+      }
+    });
+
+    // Close the menu when clicking on a menu item
+    const menuLinks = document.querySelectorAll('nav a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('menu-toggle').classList.remove('active');
+        document.getElementById('nav-links').classList.remove('active');
+      });
     });
 
     // Scroll Animation
@@ -310,4 +344,7 @@
   </script>
 </body>
 </html>
+
+
+
 
