@@ -43,6 +43,25 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #1f2233;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Mobile hamburger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      height: 5px;
+      background-color: #fff;
+      border-radius: 5px;
     }
 
     nav {
@@ -55,9 +74,13 @@
       color: #82aaff;
       text-decoration: none;
       margin: 0 15px;
-      transition: color 0.3s, transform 0.3s ease;
       font-size: 1.1rem;
-      position: relative;
+      transition: color 0.3s, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     nav a::after {
@@ -73,23 +96,6 @@
 
     nav a:last-child::after {
       content: none;
-    }
-
-    nav a:hover {
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Menu icon links (Soundcloud, YouTube) */
-    .icon-links a img {
-      transition: transform 0.3s, filter 0.3s;
-      width: 40px;
-      height: 40px;
-    }
-
-    .icon-links a img:hover {
-      transform: scale(1.2);
-      filter: brightness(1.5);
     }
 
     /* Main Sections */
@@ -128,36 +134,18 @@
     /* Mobile Styles */
     @media (max-width: 768px) {
       header {
-        padding: 10px 20px;
+        padding: 10px;
       }
 
       nav {
-        flex-direction: row; /* Menu horizontal */
+        flex-direction: row;
         justify-content: center;
       }
 
       nav a {
-        margin: 0 20px; /* Plus d'espace entre les liens */
-        font-size: 1.1rem;
-        display: inline-block;
-      }
-
-      .section {
-        padding: 60px 20px;
-      }
-
-      .title {
-        font-size: 1.8rem;
-      }
-
-      .icon-links {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-
-      .icon-links a {
         margin: 0 15px;
+        font-size: 1rem;
+        display: inline-block;
       }
 
       nav a::after {
@@ -173,6 +161,41 @@
 
       nav a:last-child::after {
         content: none;
+      }
+
+      /* Menu Toggle Styles */
+      .menu-toggle {
+        display: flex;
+      }
+
+      .menu-toggle.active + nav {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 101;
+      }
+
+      nav a {
+        margin: 20px 0;
+      }
+
+      .icon-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .icon-links a {
+        margin: 0 15px;
       }
     }
 
@@ -190,14 +213,17 @@
 </head>
 <body>
   <header>
-    <nav>
-      <div><strong>Avenhade</strong></div>
-      <div>
-        <a href="#pitch">Projet</a>
-        <a href="#bio">À propos</a>
-        <a href="#recrutement">Recrutement</a>
-        <a href="#ecoute">Écoute</a>
-      </div>
+    <div><strong>Avenhade</strong></div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="nav-links">
+      <a href="#pitch">Projet</a>
+      <a href="#bio">À propos</a>
+      <a href="#recrutement">Recrutement</a>
+      <a href="#ecoute">Écoute</a>
     </nav>
   </header>
 
@@ -208,18 +234,18 @@
 
   <section class="section fade-in" id="bio">
     <h2 class="title">Mon Histoire</h2>
-    <p>Test</p>
+    <p>Quelques mots sur mon parcours musical et mes influences...</p>
   </section>
 
   <section class="section fade-in" id="recrutement">
     <h2 class="title">Recrutement</h2>
-    <p>Test</p>
+    <p>Nous cherchons des talents !</p>
     <p><a href="https://forms.gle/example">→ Formulaire de recrutement</a></p>
   </section>
 
   <section class="section fade-in" id="ecoute">
     <h2 class="title">Écoute la maquette</h2>
-    <p>Test</p>
+    <p>Découvre l'univers sonore d'Avenhade...</p>
 
     <!-- Intégration du lecteur SoundCloud -->
     <iframe width="100%" height="166" scrolling="no" frameborder="no" 
@@ -241,6 +267,13 @@
   </footer>
 
   <script>
+    // Menu Toggle Functionality
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+      const nav = document.getElementById('nav-links');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    });
+
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
       threshold: 0.1,
@@ -261,5 +294,3 @@
   </script>
 </body>
 </html>
-
-
