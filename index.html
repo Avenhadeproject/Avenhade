@@ -267,7 +267,7 @@
     
     <!-- Section Image -->
     <div class="project-image">
-      <img src="https://cdn.discordapp.com/attachments/1167197664857837699/1368492323402547312/avenhade_v2.png?ex=681a658b&is=6819140b&hm=af911040560cb8de0415896e09e38f12ddef921e28721ed7abfd54e1c4ccb99c&" alt="Image du projet Avenhade">
+      <img src="avenhade.png" alt="Image du projet Avenhade">
     </div>
   </section>
 
@@ -286,7 +286,7 @@
   <!--  </iframe> -->
 
 <div class="project-image">
-  <img src="https://cdn.discordapp.com/attachments/830982197485764609/1369811786961780846/8th_Exit_Cover_.png?ex=681d3823&is=681be6a3&hm=bfa5041c998fda36c54d2ee4f102db64785aed85570c36c5b607846c069650f2&" alt="Pochette album 8th Exit">
+  <img src="8cover.png" alt="Pochette album 8th Exit">
 </div>
 
     <div class="icon-links">
@@ -348,19 +348,35 @@
       });
     });
 
-    // animation quand scroll
-    const sections = document.querySelectorAll('.fade-in');
-    window.addEventListener('scroll', () => {
-      sections.forEach(section => {
-        if (section.getBoundingClientRect().top < window.innerHeight) {
-          section.classList.add('visible');
-        }
-      });
-    });
+  //  animation quand scroll legacy
+  //  const sections = document.querySelectorAll('.fade-in');
+  //  window.addEventListener('scroll', () => {
+  //    sections.forEach(section => {
+  //      if (section.getBoundingClientRect().top < window.innerHeight) {
+  //        section.classList.add('visible');
+  //      }
+  //     });
+  //   });
+
+const sections = document.querySelectorAll('.fade-in');
+
+function checkVisibility() {
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      section.classList.add('visible');
+    }
+  });
+}
+
+// Lancer une première vérif au chargement
+window.addEventListener('DOMContentLoaded', checkVisibility);
+
+// Puis continuer à checker au scroll
+window.addEventListener('scroll', checkVisibility);
   </script>
 </body>
 </html>
-
 
 
 
