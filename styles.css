@@ -1,6 +1,4 @@
-
-    /* design esthétique css */
-    * {
+  * {
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
@@ -25,7 +23,7 @@
       font-size: 1.8em;
     }
 
-    /* Header */
+    
     header {
       background: rgba(0, 0, 0, 0.7);
       padding: 10px 20px;
@@ -41,7 +39,7 @@
       align-items: center;
     }
 
-    /* Menu sur telephone */
+    
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -106,7 +104,7 @@
       content: none;
     }
 
-    /* Main Sections */
+    
     .section {
       padding: 80px 20px 60px;
       max-width: 1000px;
@@ -139,7 +137,7 @@
       color: #888;
     }
 
-    /* Icon Links */
+   
     .icon-links {
       display: flex;
       justify-content: center;
@@ -156,7 +154,7 @@
       filter: brightness(1.5);
     }
 
-    /* Compatibilité telephone */
+    
     @media (max-width: 768px) {
       header {
         padding: 10px;
@@ -209,7 +207,7 @@
       }
     }
 
-    /* Additional polished styles */
+    
     a {
       color: #82aaff;
       text-decoration: none;
@@ -220,7 +218,7 @@
       color: #fff;
     }
 
-    /* Image section styling */
+   
     .project-image {
       margin-top: 20px;
       display: flex;
