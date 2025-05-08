@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://img.icons8.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://img.icons8.com; object-src 'none'; base-uri 'none';">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Avenhade</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -319,64 +325,13 @@
 
   <footer>
     &copy; 2025 Avenhade.
+ <p><a href="privacy-policy.html">Privacy Policy</a></p>
   </footer>
 
-  <script>
-    // le menu sur tel
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('active');
-    });
-
-    // fermer le menu quand tu click a coté
-    window.addEventListener('click', function(event) {
-      const nav = document.getElementById('nav-links');
-      const menuToggle = document.getElementById('menu-toggle');
-      if (!menuToggle.contains(event.target) && !nav.contains(event.target)) {
-        menuToggle.classList.remove('active');
-        nav.classList.remove('active');
-      }
-    });
-
-    // fermer menu quand click sur un titre
-    const menuLinks = document.querySelectorAll('nav a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        document.getElementById('menu-toggle').classList.remove('active');
-        document.getElementById('nav-links').classList.remove('active');
-      });
-    });
-
-  //  animation quand scroll legacy
-  //  const sections = document.querySelectorAll('.fade-in');
-  //  window.addEventListener('scroll', () => {
-  //    sections.forEach(section => {
-  //      if (section.getBoundingClientRect().top < window.innerHeight) {
-  //        section.classList.add('visible');
-  //      }
-  //     });
-  //   });
-
-const sections = document.querySelectorAll('.fade-in');
-
-function checkVisibility() {
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      section.classList.add('visible');
-    }
-  });
-}
-
-// Lancer une première vérif au chargement
-window.addEventListener('DOMContentLoaded', checkVisibility);
-
-// Puis continuer à checker au scroll
-window.addEventListener('scroll', checkVisibility);
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
+
 
 
 
