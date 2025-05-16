@@ -1,4 +1,4 @@
-  * {
+    * {
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
@@ -6,25 +6,24 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Karla', sans-serif;
       background: radial-gradient(circle at center, #0b0f2e, #050617);
       color: #e0e4ff;
       line-height: 1.6;
       overflow-x: hidden;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     p {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Karla', sans-serif;
     }
 
-    h2, h3 {
-      color: #82aaff;
-      font-size: 1.8em;
+    h2 {
+      color: #cccccc;
+      font-size: 1.5em;
     }
 
-    
-    header {
+   header {
       background: rgba(0, 0, 0, 0.7);
       padding: 10px 20px;
       position: fixed;
@@ -38,7 +37,6 @@
       justify-content: space-between;
       align-items: center;
     }
-
     
     .menu-toggle {
       display: none;
@@ -104,7 +102,6 @@
       content: none;
     }
 
-    
     .section {
       padding: 80px 20px 60px;
       max-width: 1000px;
@@ -113,10 +110,11 @@
 
     .title {
       font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #82aaff;
+      margin-bottom: 30px;
+      color: #cccccc;
       position: relative;
       padding-bottom: 10px;
+      margin-left: -5px;
     }
 
     .fade-in {
@@ -137,11 +135,14 @@
       color: #888;
     }
 
-   
     .icon-links {
       display: flex;
       justify-content: center;
       margin-top: 20px;
+    }
+     .icon-links a img {
+      width: 40px;
+      height: auto;
     }
 
     .icon-links a {
@@ -150,11 +151,16 @@
     }
 
     .icon-links a:hover {
-      transform: scale(1.2);
-      filter: brightness(1.5);
+      transform: scale(1.0);
+      filter: brightness(1.2);
     }
 
-    
+     .icon-links a img {
+      width: 40px;
+      height: auto;
+      filter: brightness(0) invert(0.7);
+    }
+
     @media (max-width: 768px) {
       header {
         padding: 10px;
@@ -207,7 +213,6 @@
       }
     }
 
-    
     a {
       color: #82aaff;
       text-decoration: none;
@@ -218,7 +223,6 @@
       color: #fff;
     }
 
-   
     .project-image {
       margin-top: 20px;
       display: flex;
@@ -236,3 +240,23 @@
       object-fit: cover;
       border-radius: 10px;
     }
+
+      #about p {
+      margin-bottom: 1.4em;
+    }
+
+     .titlef {
+      text-align: center;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+     .project-image {
+      float: right;
+      margin: 20px; 
+    }
+
+     .site-title {
+      font-size: 1.5rem; 
+      font-weight: normal;
+      color: #e0e4ff; 
