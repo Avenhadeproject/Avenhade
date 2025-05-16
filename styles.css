@@ -117,14 +117,21 @@
       margin-left: -3px;
     }
 
-    .title::after {
+     .title::after {
       content: "";
       display: block;
       width: 960px;
       height: 2px;
       background-color: #aaaaaa;
-      margin: 10px auto 0; /* centrée */
+      margin: 10px auto 0;
     }
+
+      @media (max-width: 480px) {
+     .title::after {
+      display: none;
+      }
+    }
+
 
     .fade-in {
       opacity: 0;
