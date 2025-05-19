@@ -276,7 +276,7 @@
  
       @font-face {
       font-family: 'Karla';
-      src: url('Karla-Bold.woff2') format('woff2');
+      src: url('fonts/Karla-Bold.woff2') format('woff2');
       font-weight: bold;
       font-style: normal;
       font-display: swap;
@@ -284,7 +284,7 @@
 
       @font-face {
       font-family: 'Karla';
-      src: url('Karla-Regular.woff2') format('woff2');
+      src: url('fonts/Karla-Regular.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
