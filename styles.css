@@ -124,9 +124,10 @@
 
       @media (max-width: 480px) {
      .title {
-      font-size: 1.2em;
+      font-size: 1.5em;
       margin-bottom: 15px;
       padding-bottom: 6px;
+      text-align: center;
     }
 
        
